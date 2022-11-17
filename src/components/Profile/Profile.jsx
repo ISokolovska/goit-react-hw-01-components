@@ -1,43 +1,42 @@
 import PropTypes from "prop-types";
+import { Description, Avatar, Name, Tag, Location, Stats, StatsWrapper, StatsLabel, StatsQuantity } from "./Styled";
+
 export const Profile = ({ username, tag, location, avatar, stats }) => {
     return <div className="profile">
-        <div className="description">
-            <img
+        <Description className="description">
+            <Avatar
                 src={avatar}
                 alt="User avatar"
                 className="avatar"
             />
-            <p className="name">{username}</p>
-            <p className="tag">{tag}</p>
-            <p className="location">{location}</p>
-        </div>
+            <Name className="name">{username}</Name>
+            <Tag className="tag">{tag}</Tag>
+            <Location className="location">{location}</Location>
+        </Description>
 
-        <ul className="stats">
-            <li>
-                <span className="label">Followers</span>
-                <span className="quantity">{stats}</span>
-            </li>
-            <li>
-                <span className="label">Views</span>
-                <span className="quantity">{stats}</span>
-            </li>
-            <li>
-                <span className="label">Likes</span>
-                <span className="quantity">{stats}</span>
-            </li>
-        </ul>
+        <Stats className="stats">
+            <StatsWrapper>
+                <StatsLabel className="label">Followers</StatsLabel>
+                <StatsQuantity className="quantity">{stats.followers}</StatsQuantity>
+            </StatsWrapper>
+            <StatsWrapper>
+                <StatsLabel className="label">Views</StatsLabel>
+                <StatsQuantity className="quantity">{stats.views}</StatsQuantity>
+            </StatsWrapper>
+            <StatsWrapper>
+                <StatsLabel className="label">Likes</StatsLabel>
+                <StatsQuantity className="quantity">{stats.likes}</StatsQuantity>
+            </StatsWrapper>
+        </Stats>
     </div>
 };
 
-
- 
-
 Profile.propTypes = {
-  username: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
-    avatar: PropTypes.node.isRequired,
-//   stats: PropTypes.number.isRequired,
+    avatar: PropTypes.string,
+    stats: PropTypes.object.isRequired,
 };
 
  
