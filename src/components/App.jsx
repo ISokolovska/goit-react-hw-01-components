@@ -1,7 +1,11 @@
 import { Profile } from "./Profile/Profile";
 import { Statistics } from "./Statistics/Statistics";
-import { user } from "user";
-import { data } from "data";
+import { FriendList } from "./FriendList/FriendList";
+import { TransactionHistory } from "./TransactionHistory/TransactionHistory";
+import user from "../data/user";
+import data from "../data/data";
+import friends from "../data/friends";
+import transactions from "../data/transactions";
 
 export const App = () => {
   return (
@@ -15,7 +19,6 @@ export const App = () => {
         textAlign: "center"
       }}
     >
-      <h1>React homework template</h1>
       <Profile
         username={user.username}
         tag={user.tag}
@@ -24,6 +27,8 @@ export const App = () => {
         stats={user.stats}  
       />
       <Statistics title="Upload stats" stats={data} />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </div>
   );
 };
