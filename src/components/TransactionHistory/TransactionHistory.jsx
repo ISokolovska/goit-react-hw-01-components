@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Table, HeaderWrapper, Header } from "../TransactionHistory/Styled";
+import { Table, HeaderWrapper, Header, CellWrapper, Cell } from "../TransactionHistory/Styled";
 
 export const TransactionHistory = ({ items }) => {
     return (
@@ -13,11 +13,11 @@ export const TransactionHistory = ({ items }) => {
             </thead>
             {items.map((item) => {
                 return (<tbody key={item.id}>
-                    <tr>
-                        <Header>{item.type}</Header>
-                        <Header>{item.amount}</Header>
-                        <Header>{item.currency}</Header>
-                    </tr>
+                    <CellWrapper>
+                        <Cell>{item.type}</Cell>
+                        <Cell>{item.amount}</Cell>
+                        <Cell>{item.currency}</Cell>
+                    </CellWrapper>
                 </tbody>);})}
         </Table>
     );

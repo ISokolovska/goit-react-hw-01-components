@@ -13,6 +13,15 @@ export const Header = styled.td`
   border: 1px solid grey;
 `;
 
+export const Cell = styled.td`
+  padding: 10px;
+  border: 1px solid grey;
+`;
+
 export const HeaderWrapper = styled.tr`
   background-color: blueviolet;
+`;
+
+export const CellWrapper = styled.tr`
+  background-color: white;
 `;
